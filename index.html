@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles1.css') }}">
+    <title>Notes</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Ваши заметки</h1>
+        <ul class="notes-list">
+            {% for note in notes %}
+                <li><strong>{{ note.title }}</strong>: {{ note.content }}</li>
+            {% endfor %}
+        </ul>
+        <a class="add-note-btn" href="{{ url_for('add_note') }}">Написать заметку</a>
+    </div>
+</body>
+</html>
